@@ -88,7 +88,7 @@ INSTALL_HINT = (
 
 def cli_path() -> str:
     """Return the path of the `agentcore` executable or raise with install instructions."""
-    path = shutil.which('agentcore')
+    path = shutil.which('agentcore.cmd') or shutil.which('agentcore')
     if not path:
         raise RuntimeError(INSTALL_HINT)
     return path
